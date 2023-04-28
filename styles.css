@@ -20,6 +20,7 @@
   --modal-shadow-two: rgba(0, 0, 0, 0.12);
   --modal-shadow-three: rgba(0, 0, 0, 0.2);
   --modal-close-button-border: rgba(0, 0, 0, 0.1);
+  --anima: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -80,6 +81,7 @@ p {
   padding: 16px 32px;
   border: 1px solid var(--accent);
   border-radius: 4px;
+  transition: background-color var(--anima);
 }
 .buttons:active,
 .buttons:hover {
@@ -87,6 +89,9 @@ p {
   color: var(--secondary-text);
   box-shadow: 0px 1px 6px var(--shadow-one), 0px 1px 1px var(--shadow-two),
     0px 2px 1px var(--shadow-one);
+    border-color: var(--active-buttons);
+    transition: box-shadow var(--anima);
+    transition: border-color var(--anima);
 }
 
 .buttons:focus {
@@ -118,9 +123,9 @@ p {
   background-color: var(--accent);
   border: 1px solid var(--modal-close-button-border);
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--anima),
+    border var(--anima),
+    fill var(--anima);
 }
 .modal-button-close:hover,
 .modal-button-close:focus {
@@ -172,6 +177,7 @@ p {
 .nav-a {
   font-weight: 500;
   color: var(--dark);
+  transition: color var(--anima);
 }
 .nav-a::after {
   display: block;
@@ -185,6 +191,8 @@ p {
   background-color: var(--active-buttons);
   border-radius: 2px;
   opacity: 0;
+  transition: background-color var(--anima); 
+  
 }
 .header-active-page.nav-a::after {
   opacity: 1;
@@ -206,6 +214,7 @@ p {
 .address-a {
   font-style: normal;
   color: var(--primary-text);
+  transition: color var(--anima);
 }
 .address-a:hover,
 .address-a:focus {
@@ -258,6 +267,7 @@ p {
   width: 100%;
   border-radius: 50%;
   background-color: var(--dark-opacity);
+  transition:  background-color var(--anima);
 }
 
 .footer-social-link:hover,
@@ -296,50 +306,46 @@ p {
 }
 
 /* modal */
+
 .backdrop {
   position: fixed;
   width: 100%;
   height: 100%;
-  left: 0px;
-  top: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left:0;
+  top:0;
   background: var(--backdrop-background);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anima),
+    visibility var(--anima);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--anima);
   width: 408px;
   height: 576px;
   background-color: var(--modal-color);
-  border-radius: 4px;
-  display: flex;
-
-  justify-content: flex-end;
+  padding: 24px;
   box-shadow: 0px 1px 1px var(--modal-shadow-one),
     0px 1px 3px var(--modal-shadow-two), 0px 2px 1px var(--modal-shadow-three);
   border-radius: 4px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
 .modal-icon {
   height: 8px;
   width: 8px;
 }
-.backdrop.is-hidden .modal {
-  transform: scale(0);
-}
+
 
 /*   features-section   */
 
@@ -456,6 +462,7 @@ p {
   width: 100%;
   border-radius: 50%;
   background-color: var(--primary-brand);
+  transition:  background-color var(--anima);
 }
 .team-social-link:hover,
 .team-social-link:focus {
@@ -494,24 +501,27 @@ p {
   width: 168px;
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
+  transition: border-color var(--anima);
+
 }
 .customers-icon {
   width: 104px;
   height: 56px;
   fill: var(--customers-logos);
+  transition: fill, var(--anima);
 }
 
 .customers-link:hover .customers-icon {
-  fill: var(--primary-brand);
+  fill: var(--active-buttons);
 }
 .customers-link:hover {
-  border-color: var(--primary-brand);
+  border-color: var(--active-buttons);
 }
 .customers-link:focus .customers-icon {
-  fill: var(--primary-brand);
+  fill: var(--active-buttons);
 }
 .customers-link:focus {
-  border-color: var(--primary-brand);
+  border-color: var(--active-buttons);
 }
 /*     PORTFOLIO PAGE     */
 
@@ -526,6 +536,12 @@ p {
   justify-content: center;
   margin-bottom: 72px;
 }
+.filter-buttons-ul .buttons {
+height: 48px;
+padding: 0 24px;
+align-items: center;
+}
+
 .filter-buttons-li:not(:last-of-type) {
   margin-right: 24px;
 }
@@ -539,9 +555,7 @@ p {
   flex-basis: calc((100% - 2 * 24px) / 3);
   margin-right: 24px;
   margin-bottom: 48px;
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .filter-list-li:nth-of-type(3n) {
   margin-right: 0;
@@ -560,6 +574,7 @@ p {
   border-left: 1px solid var(--accent);
   border-bottom: 1px solid var(--accent);
   border-right: 1px solid var(--accent);
+  transition: box-shadow var(--anima);
 }
 .filter-list-li:hover .filter-list-front {
   box-shadow: 0px 2px 1px var(--shadow-one), 0px 1px 1px var(--shadow-two),
@@ -567,18 +582,16 @@ p {
 }
 .filter-list-text-box {
   width: 100%;
-  height: 100%;
-  display: flex;
+  height: 100%; 
   position: absolute;
   align-items: center;
   justify-content: center;
   color: var(--light);
   background: var(--primary-brand);
   top: 0;
-  padding: 40px 32px 164px 32px;
+  padding: 40px 32px 0 32px;
   transform: translateY(100%);
-  transition: transform 250ms ease;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--anima);
 }
 .filter-list-link:hover .filter-list-text-box,
 .filter-list-link:focus .filter-list-text-box {
