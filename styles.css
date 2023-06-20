@@ -592,7 +592,9 @@ p {
   padding: 40px 32px 0 32px;
   transform: translateY(100%);
   transition: transform var(--anima);
+  transition: box-shadow var(--anima);
 }
+
 .filter-list-link:hover .filter-list-text-box,
 .filter-list-link:focus .filter-list-text-box {
   transform: translateY(0);
