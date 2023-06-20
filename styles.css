@@ -503,6 +503,7 @@ p {
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
   transition: border-color var(--anima);
+  transition: color var(--anima);
 }
 .customers-icon {
   width: 104px;
