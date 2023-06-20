@@ -497,8 +497,7 @@ p {
   width: 168px;
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
-  transition: border-color var(--anima);
-  transition: color var(--anima);
+  transition: border-color var(--anima), color var(--anima);
 }
 .customers-icon {
   width: 104px;
