@@ -172,6 +172,7 @@ p {
   margin-right: 40px;
 }
 .nav-a {
+  position: relative;
   display: block;
   font-weight: 500;
   color: var(--dark);
@@ -179,6 +180,7 @@ p {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+
 .nav-a::after {
   display: block;
   position: absolute;
