@@ -110,6 +110,7 @@ p {
 }
 
 .modal-button-close {
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -326,7 +327,7 @@ p {
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--anima);
   width: 408px;
-  height: 576px;
+  min-height: 584px;
   background-color: var(--modal-color);
   padding: 24px;
   box-shadow: 0px 1px 1px var(--modal-shadow-one),
