@@ -106,6 +106,7 @@ p {
     0px 2px 1px var(--shadow-one);
   border: none;
   cursor: pointer;
+  transition: background-color var(--anima);
 }
 
 .modal-button-close {
@@ -505,7 +506,7 @@ p {
   width: 104px;
   height: 56px;
   fill: var(--subtle-text);
-  transition: fill, var(--anima);
+  transition: fill var(--anima);
 }
 
 .customers-link:hover .customers-icon {
