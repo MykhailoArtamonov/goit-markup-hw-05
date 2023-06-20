@@ -124,13 +124,13 @@ p {
   background-color: var(--accent);
   border: 1px solid var(--modal-close-button-border);
   border-radius: 50%;
-  transition: background-color var(--anima), border var(--anima),
-    fill var(--anima);
+  transition: background-color var(--anima), border var(--anima);
 }
 .modal-button-close:hover,
 .modal-button-close:focus {
   background-color: var(--active-buttons);
-  fill: var(--light);
+  fill: var(--secondary-text);
+  border: none;
 }
 /*   HEADER   */
 
@@ -338,6 +338,7 @@ p {
   transform: translate(-50%, -50%) scale(1.2);
 }
 .modal-icon {
+  transition: fill var(--anima);
   height: 8px;
   width: 8px;
 }
