@@ -491,12 +491,14 @@ p {
 }
 .customers-link {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 88px;
-  width: 168px;
-  border: 1px solid var(--subtle-text);
+  width: 100%;
+  height: 100%;
+  border: 1px solid #8e8f99;
   border-radius: 4px;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  color: #8e8f99;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
