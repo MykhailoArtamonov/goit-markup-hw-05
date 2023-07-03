@@ -531,7 +531,7 @@ p {
 }
 .customers-link:focus .customers-icon {
   fill: var(--active-buttons);
-  background-color: var(--active-buttons);
+  color: var(--active-buttons);
   color: #404bbf;
 }
 .customers-link:focus {
