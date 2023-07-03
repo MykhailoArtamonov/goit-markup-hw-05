@@ -416,7 +416,7 @@ p {
 .team-section h2 {
   margin-bottom: 72px;
 }
-.team-section ul {
+.team-section-ul {
   display: flex;
   justify-content: space-between;
 }
