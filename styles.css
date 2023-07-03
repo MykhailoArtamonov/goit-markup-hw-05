@@ -429,6 +429,7 @@ p {
   background-color: var(--secondary-text);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .team-li:not(:last-of-type) {
@@ -438,7 +439,6 @@ p {
 .team-li-box {
   padding: 32px 0;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 .team-li-box h3 {
@@ -456,7 +456,6 @@ p {
 .team-social-item {
   height: 40px;
   width: 40px;
-  justify-content: center;
 }
 .team-social-link {
   display: flex;
