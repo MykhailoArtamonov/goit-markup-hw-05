@@ -150,6 +150,8 @@ p {
 
 .header-section {
   border-bottom: 1px solid var(--subtle-text);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-section > div {
@@ -229,6 +231,10 @@ p {
   padding-bottom: 100px;
   text-align: left;
 }
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
 .footer-box-one {
   display: inline-block;
   width: 264px;
@@ -238,6 +244,8 @@ p {
   color: var(--light);
 }
 .footer-p {
+  font-weight: 500;
+  font-weight: 500;
   margin-top: 17.5px;
   color: var(--light);
 }
@@ -263,7 +271,7 @@ p {
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  background-color: var(--dark-opacity);
+  background-color: var(--primary-brand);
   transition: background-color var(--anima);
 }
 
@@ -369,6 +377,7 @@ p {
   justify-content: center;
   border-radius: 4px;
   background-color: var(--light);
+  margin-bottom: 8px;
 }
 .features-icon {
   height: 64px;
@@ -426,11 +435,9 @@ p {
 .team-li:not(:last-of-type) {
   margin-right: 24px;
 }
-.team-li > img {
-  margin-bottom: 32px;
-}
+
 .team-li-box {
-  padding-bottom: 32px;
+  padding: 32px 0;
   display: flex;
   flex-direction: column;
 }
@@ -441,14 +448,13 @@ p {
   margin-bottom: 8px;
 }
 .team-social-items {
+  justify-content: center;
+  gap: 24px;
   width: 232px;
 }
 .team-social-item {
   height: 40px;
   width: 40px;
-}
-.team-social-item:not(:last-of-type) {
-  margin-right: 24px;
 }
 .team-social-link {
   display: flex;
@@ -475,10 +481,12 @@ p {
 .customers-section {
   padding-top: 120px;
   padding-bottom: 120px;
+  color: var(--dark);
 }
 
-.customers-section > h2 {
+.customers-h {
   margin-bottom: 72px;
+  line-height: 1.11;
 }
 .customers-list-ul {
   display: flex;
@@ -486,6 +494,8 @@ p {
   gap: 24px;
 }
 .customers-list-li {
+  width: calc((100% - 120px) / 6);
+  height: 88px;
   display: flex;
   text-align: center;
 }
@@ -505,18 +515,21 @@ p {
 .customers-icon {
   width: 104px;
   height: 56px;
-  fill: var(--subtle-text);
+  fill: currentColor;
   transition: fill var(--anima);
 }
 
 .customers-link:hover .customers-icon {
   fill: var(--active-buttons);
+  color: #404bbf;
 }
 .customers-link:hover {
   border-color: var(--active-buttons);
+  color: #404bbf;
 }
 .customers-link:focus .customers-icon {
   fill: var(--active-buttons);
+  color: #404bbf;
 }
 .customers-link:focus {
   border-color: var(--active-buttons);
@@ -586,11 +599,24 @@ p {
   transform: translateY(100%);
   transition: transform var(--anima);
 }
-
+.filter-list-link:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 .filter-list-link:hover .filter-list-p,
 .filter-list-link:focus .filter-list-p {
   transform: translateY(0);
 }
 .filter-list-front h2 {
   margin-bottom: 8px;
+}
+
+.filter-buttons:hover {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.filter-buttons:hover {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
