@@ -521,21 +521,20 @@ p {
   transition: fill var(--anima);
 }
 
-.customers-link:hover .customers-icon {
-  fill: var(--active-buttons);
-  color: #404bbf;
-}
-.customers-link:hover {
-  border-color: var(--active-buttons);
-  color: #404bbf;
-}
-.customers-link:focus .customers-icon {
-  fill: var(--active-buttons);
-  color: var(--active-buttons);
-  color: #404bbf;
-}
+.customers-link:hover,
 .customers-link:focus {
-  border-color: var(--active-buttons);
+  border-color: #404bbf;
+  color: #404bbf;
+}
+
+.customers-list-icon {
+  fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customers-icon:hover,
+.customers-icon:focus {
+  fill: currentColor;
 }
 /*     PORTFOLIO PAGE     */
 
